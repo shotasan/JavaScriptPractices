@@ -109,3 +109,17 @@ function reverseWords(str) {
 function reverseWords(str) {
   return str.split(' ').reverse().join(' ');
 }
+
+
+// No.7
+// Simple, remove the spaces from the string, then return the resultant string.
+
+// My_answer
+function noSpace(x) {
+  return x.replace(/\s+/g, '')
+}
+
+// Best_answer
+function noSpace(x) {
+  return x.replace(/\s+/g, '')
+}
