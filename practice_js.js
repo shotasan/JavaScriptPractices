@@ -143,3 +143,46 @@ var stringToNumber = function (str) {
 var stringToNumber = function (str) {
   return parseInt(str);
 }
+
+
+// No.9
+// Consider an array of sheep where some sheep may be missing from their place.
+// We need a function that counts the number of sheep present in the array(true means present).
+// For example,
+// [true, true, true, false,
+// true, true, true, true,
+// true, false, true, false,
+// true, false, false, true,
+// true, true, true, true,
+// false, false, true, true]
+// The correct answer would be 17.
+// Hint: Don't forget to check for bad values like null/undefined
+
+// My_answer
+function countSheeps(arrayOfSheep) {
+  var count = 0;
+  arrayOfSheep.forEach(function (value) {
+    if (value == true) { count++ }
+  });
+  return count;
+}
+
+// Best_answer
+// filter() は、与えられた callback 関数を配列の各要素に対して一度ずつ呼び出し、callback が真と評価される値を返したすべての要素からなる新しい配列を生成します。
+function countSheeps(arrayOfSheeps) {
+  return arrayOfSheeps.filter(Boolean).length;
+}
+
+
+// No.10
+// Complete the method that takes a boolean value and return a "Yes" string for true, or a "No" string for false.
+
+// My_answer
+function boolToWord(bool) {
+  return bool ? 'Yes' : 'No';
+}
+
+// Best_answer
+function boolToWord(bool) {
+  return bool ? 'Yes' : 'No';
+}
