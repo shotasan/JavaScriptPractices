@@ -86,3 +86,22 @@ function basicOp(operation, value1, value2) {
       return 0;
   }
 }
+
+
+// No.13
+// We need a function that can transform a number into a string.
+// What ways of achieving this do you know ?
+// Examples :
+// numberToString(123); // returns '123';`   
+// numberToString(999); // returns '999';`
+
+// My_answer
+function numberToString(num) {
+  // Return a string of the number here!
+  return String(num);
+}
+
+// Best_answer
+function numberToString(num) {
+  return num.toString();
+}
