@@ -130,3 +130,25 @@ function greet(name) {
 function greet(name) {
   return "Hello, " + (name == "Johnny" ? "my love" : name) + "!";
 }
+
+
+// No.15
+// Write a function to convert a name into initials.This kata strictly takes two words with one space in between them.
+// The output should be two capital letters with a dot seperating them.
+// It should look like this:
+// Sam Harris => S.H
+// Patrick Feeney => P.F
+
+// My_answer
+function abbrevName(name) {
+  return name.split(' ').map(function (element) {
+    return element.charAt(0).toUpperCase();
+  }).join('.');
+}
+
+// Best_answer
+function abbrevName(name) {
+
+  var nameArray = name.split(" ");
+  return (nameArray[0][0] + "." + nameArray[1][0]).toUpperCase();
+}
