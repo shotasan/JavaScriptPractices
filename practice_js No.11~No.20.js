@@ -170,3 +170,22 @@ function findNeedle(haystack) {
 function findNeedle(haystack) {
   return "found the needle at position " + haystack.indexOf("needle");
 }
+
+
+// No.17
+// Write function avg which calculates average of numbers in given list.
+
+// My_answer
+function find_average(array) {
+  let sum = array.reduce(function (prev, current) {
+    return prev + current;
+  });
+  let count = array.length;
+  return sum / count;
+}
+
+// Best_answer
+function find_average(array) {
+  var sum = array.reduce((a, b) => a + b, 0);
+  return sum / array.length;
+}
