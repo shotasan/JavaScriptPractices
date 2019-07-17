@@ -230,3 +230,25 @@ function isDivisible(n, x, y) {
 function isDivisible(n, x, y) {
   return n % x === 0 && n % y === 0
 }
+
+
+// No.20
+// Introduction
+// The first century spans from the year 1 up to and including the year 100, The second - from the year 101 up to and including the year 200, etc.
+// Task :
+// Given a year, return the century it is in.
+// Input, Output Examples::
+// centuryFromYear(1705)  returns(18)
+// centuryFromYear(1900)  returns(19)
+// centuryFromYear(1601)  returns(17)
+// centuryFromYear(2000)  returns(20)
+
+// My_answer
+function century(year) {
+  let remainder = year % 100;
+  return remainder === 0 ? year / 100 : Math.floor(year / 100) + 1;
+}
+
+// Best_answer
+// Math.ceil() 関数は、引数として与えた数以上の最小の整数を返します。
+const century = year => Math.ceil(year / 100)
