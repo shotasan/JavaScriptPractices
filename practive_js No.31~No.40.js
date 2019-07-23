@@ -16,3 +16,19 @@ function fakeBin(x) {
 function fakeBin(x) {
   return x.split('').map(n => n < 5 ? 0 : 1).join('');
 }
+
+
+// No.32
+// Given an array of integers, return a new array with each value doubled.
+// For example:
+// [1, 2, 3]-- > [2, 4, 6]
+
+// My_answer
+function maps(x) {
+  return x.map(n => n * 2);
+}
+
+// Best_answer
+function maps(x) {
+  return x.map(n => n * 2);
+}
