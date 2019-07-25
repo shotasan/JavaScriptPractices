@@ -55,3 +55,21 @@ function maps(x) {
 const points = games => games.reduce((output, current) => {
   return output += current[0] > current[2] ? 3 : current[0] === current[2] ? 1 : 0;
 }, 0)
+
+
+// No.34
+// Get the number n(n > 0) to return the reversed sequence from n to 1.
+// Example: n = 5 >> [5, 4, 3, 2, 1]
+
+// My_answer
+const reverseSeq = n => {
+  return Array.from(new Array(n)).map((v, i) => i + 1).reverse();
+};
+
+// Best_answer
+const reverseSeq = n => {
+  let arr = [];
+  for (let i = n; i > 0; i--) {
+    arr.push(i);
+  } return arr;
+};
