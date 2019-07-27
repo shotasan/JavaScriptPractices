@@ -113,3 +113,15 @@ function DNAtoRNA(dna) {
 function DNAtoRNA(dna) {
   return dna.replace(/T/g, 'U');
 }
+
+
+// No.37
+// Given a non - empty array of integers, return the result of multiplying the values together in order.
+// Example:
+// [1, 2, 3, 4] => 1 * 2 * 3 * 4 = 24
+
+// My_answer
+function grow(x) { return x.reduce((a, b) => a * b) };
+
+// Best_answer
+const grow = x => x.reduce((a, b) => a * b);
