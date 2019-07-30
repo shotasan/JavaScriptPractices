@@ -147,3 +147,29 @@ function accum(s) {
 function accum(s) {
   return s.split('').map((c, i) => (c.toUpperCase() + c.toLowerCase().repeat(i))).join('-');
 }
+
+
+// No.39
+// Return the number(count) of vowels in the given string.
+// We will consider a, e, i, o, and u as vowels for this Kata.
+// The input string will only consist of lower case letters and / or spaces.
+
+// My_answer
+function getCount(str) {
+  var vowelsCount = 0;
+  const vowels = ['a', 'e', 'i', 'o', 'u'];
+
+  for (let i = 0; i < vowels.length; i++) {
+    for (let c = 0; c < str.length; c++) {
+      if (str[c] === vowels[i]) {
+        vowelsCount++
+      };
+    }
+  }
+  return vowelsCount;
+}
+
+// Best_answer
+function getCount(str) {
+  return (str.match(/[aeiou]/ig) || []).length;
+}
