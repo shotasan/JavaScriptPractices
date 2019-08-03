@@ -38,3 +38,20 @@ function XO(str) {
   let o = str.match(/o/gi);
   return (x && x.length) === (o && o.length);
 }
+
+
+// No.43
+// For example, if we run 9119 through the function, 811181 will come out, because 92 is 81 and 12 is 1.
+// Note: The function accepts an integer and returns an integer
+
+// My_answer
+function squareDigits(num) {
+  let result = num.toString().split('').map(i => Number(i) ** 2).join('');
+  return Number(result);
+}
+
+// Best_answer
+function squareDigits(num) {
+  return Number(('' + num).split('').map(function (val) { return val * val; }).join(''));
+
+}
