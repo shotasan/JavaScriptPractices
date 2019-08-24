@@ -38,3 +38,20 @@ function breakChocolate(n, m) {
 var breakChocolate = function (n, m) {
   return (n * m === 0) ? 0 : n * m - 1;
 };
+
+
+// No.63
+// Complete the solution so that it returns true if the first argument(string) passed in ends with the 2nd argument(also a string).
+// Examples:
+// solution('abc', 'bc') // returns true
+// solution('abc', 'd') // returns false
+
+// My_answer
+function solution(str, ending) {
+  return str.endsWith(ending);
+}
+
+// Best_answer
+function solution(str, ending) {
+  return new RegExp(ending + "$", "i").test(str);
+}
