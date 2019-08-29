@@ -179,3 +179,28 @@ function tribonacci(signature, n) {
   }
   return signature.slice(0, n); //return trib - length of n
 }
+
+
+// No.68
+// Description:
+// Complete the method / function so that it converts dash / underscore delimited words into camel casing.
+// The first word within the output should be capitalized only if the original word was capitalized(known as Upper Camel Case,
+// also often referred to as Pascal case).
+//  Examples
+// toCamelCase("the-stealth-warrior") // returns "theStealthWarrior"
+// toCamelCase("The_Stealth_Warrior") // returns "TheStealthWarrior"
+
+// My_answer
+function toCamelCase(str) {
+  let strDiv = str.split(/[-_]/);
+  let result = [strDiv[0]];
+  for (let i = 1; i < strDiv.length; i++) {
+    result.push(strDiv[i][0].toUpperCase() + strDiv[i].slice(1));
+  }
+  return result.join('');
+}
+
+// Best_answer
+function toCamelCase(str) {
+  return str.replace(/[-_](.)/g, (_, c) => c.toUpperCase());
+}
