@@ -40,3 +40,29 @@ function triangular(n) {
 function triangular(n) {
   return (n > 0) ? ((n * n) + n) / 2 : 0;
 }
+
+
+// No.73
+// Instructions
+// Write a function that takes a single string(word) as argument.
+// The function must return an ordered list containing the indexes of all capital letters in the string.
+// Example
+// Test.assertSimilar(capitals('CodEWaRs'), [0, 3, 4, 6]);
+
+// My_answer
+var capitals = function (word) {
+  let result = [];
+  for (let i = 0; i < word.length; i++) {
+    if (word[i] === word[i].toUpperCase()) {
+      result.push(i);
+    }
+  }
+  return result;
+};
+
+// Best_answer
+var capitals = function (word) {
+  return word.split('').reduce(function (memo, v, i) {
+    return v === v.toUpperCase() ? memo.concat(i) : memo;
+  }, []);
+};
