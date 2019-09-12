@@ -105,3 +105,37 @@ function sumDigits(number) {
 function sumDigits(number) {
   return Math.abs(number).toString().split('').reduce(function (a, b) { return +a + +b }, 0);
 }
+
+
+// No.76
+// Finish the solution so that it sorts the passed in array of numbers.
+// If the function passes in an empty array or null / nil value then it should return an empty array.
+// For example:
+// solution([1, 2, 10, 50, 5]); // should return [1,2,5,10,50]
+// solution(null); // should return []
+
+// My_answer
+// 選択ソート
+function solution(nums) {
+  if (nums == null) return [];
+
+  for (let i = 0; i < nums.length - 1; i++) {
+    let minIndex = i;
+    for (let k = i + 1; k < nums.length; k++) {
+      if (nums[k] < nums[minIndex]) {
+        minIndex = k;
+      }
+    }
+    let w = nums[i];
+    nums[i] = nums[minIndex];
+    nums[minIndex] = w;
+  }
+  return nums;
+}
+
+// Best_answer
+function solution(nums) {
+  return (nums || []).sort(function (a, b) {
+    return a - b
+  });
+}
