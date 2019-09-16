@@ -215,3 +215,22 @@ function inAscOrder(arr) {
 function inAscOrder(arr) {
   return arr.every((_, i) => i == 0 || arr[i] > arr[i - 1]);
 }
+
+
+// No.80
+// Write a function called sortGiftCode / sort_gift_code / SortGiftCode that accepts a string containing up to 26 unique alphabetical characters,
+// and returns a string containing the same characters in alphabetical order.
+// Examples:
+// sortGiftCode('abcdef'); //=> returns 'abcdef'
+// sortGiftCode('pqksuvy'); //=> returns 'kpqsuvy'
+// sortGiftCode('zyxwvutsrqponmlkjihgfedcba'); //=> returns 'abcdefghijklmnopqrstuvwxyz'
+
+// My_answer
+function sortGiftCode(code) {
+  return code.split('').sort().join('');
+}
+
+// Best_answer
+function sortGiftCode(code) {
+  return code.split('').sort().join('');
+}
