@@ -131,3 +131,22 @@ function getMiddle(s) {
 function getMiddle(s) {
   return s.substr(Math.ceil(s.length / 2 - 1), s.length % 2 === 0 ? 2 : 1);
 }
+
+
+// No.85
+// Complete the function/method so that it returns the url with anything after the anchor (#) removed.
+// Examples:
+// // returns 'www.codewars.com'
+// removeUrlAnchor('www.codewars.com#about')
+// // returns 'www.codewars.com?page=1' 
+// removeUrlAnchor('www.codewars.com?page=1') 
+
+// My_answer
+function removeUrlAnchor(url) {
+  return url.replace(/#.+/, "");
+}
+
+// Best_answer
+function removeUrlAnchor(url) {
+  return url.split('#')[0];
+}
