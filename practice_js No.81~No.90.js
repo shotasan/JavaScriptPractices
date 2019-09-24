@@ -180,3 +180,53 @@ function solution(number) {
   }
   return sum;
 }
+
+
+// No.87
+// You are given a secret message you need to decipher.Here are the things you need to know to decipher it:
+// For each word:
+// the second and the last letter is switched(e.g.Hello becomes Holle)
+// the first letter is replaced by its character code(e.g.H becomes 72)
+// Note: there are no special characters used, only letters and spaces
+// Examples
+// decipherThis('72olle 103doo 100ya'); // 'Hello good day'
+// decipherThis('82yade 115te 103o'); // 'Ready set go'
+
+// My_answer
+function decipherThis(str) {
+  return switchLetter(replaceCharacter(str)).join(' ');
+};
+
+// 文字コードを文字に変換
+function replaceCharacter(str) {
+  return str.split(' ').map(function (s) {
+    let num = s.match(/\d*/gi)[0];
+    let char = String.fromCharCode(num);
+    return s.replace(/\d*/, char);
+  })
+}
+
+// 2文字目と最後の文字を入れ替え
+function switchLetter(str) {
+  return str.map(function (s) {
+    let chars = [...s];
+    if (chars.length > 2) {
+      let tmp = chars[1];
+      chars[1] = chars[chars.length - 1];
+      chars[chars.length - 1] = tmp;
+      return chars.join('');
+    } else {
+      return s;
+    }
+  })
+}
+
+// Best_answer
+function decipherThis(str) {
+  return str.split(" ")
+    .map(w =>
+      w.replace(/^\d+/, c => String.fromCharCode(c))
+        .replace(/^(.)(.)(.*)(.)$/, "$1$4$3$2")
+    )
+    .join(" ")
+}
