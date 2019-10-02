@@ -327,3 +327,30 @@ function comp(array1, array2) {
   array1.sort((a, b) => a - b); array2.sort((a, b) => a - b);
   return array1.map(v => v * v).every((v, i) => v == array2[i]);
 }
+
+
+// No.90
+// An anagram is the result of rearranging the letters of a word to produce a new word(see wikipedia).
+// Note: anagrams are case insensitive
+// Complete the function to return true if the two arguments given are anagrams of each other; return false otherwise.
+// Examples
+// "foefet" is an anagram of "toffee"
+// "Buckethead" is an anagram of "DeathCubeK"
+
+// My_answer
+var isAnagram = function (test, original) {
+  if (test.length != original.length) return false;
+  let testArray = test.toLowerCase().split('').sort();
+  let originalArray = original.toLowerCase().split('').sort();
+  for (let i = 0; i < original.length; i++) {
+    if (testArray[i] !== originalArray[i]) return false;
+  }
+  return true;
+};
+
+// Best_answer
+var isAnagram = function (test, original) {
+  var t = test.toLowerCase().split('').sort().join('');
+  var o = original.toLowerCase().split('').sort().join('');
+  return (t == o) ? true : false;
+};
