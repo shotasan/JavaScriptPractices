@@ -20,3 +20,30 @@ function isSortedAndHow(arr) {
   return arr.every((x, i) => i == 0 || arr[i] >= arr[i - 1]) ? 'yes, ascending' :
     arr.every((x, i) => i == 0 || arr[i] <= arr[i - 1]) ? 'yes, descending' : 'no'
 }
+
+
+// No.92
+// Your task is to remove all duplicate words from a string, leaving only single(first) words entries.
+// Example:
+// Input:
+// 'alpha beta beta gamma gamma gamma delta alpha beta beta gamma gamma gamma delta'
+// Output:
+// 'alpha beta gamma delta'
+
+// My_answer
+function removeDuplicateWords(s) {
+  let eachStrings = s.split(" ");
+  let result = [];
+  eachStrings.forEach(function (s) {
+    if (!result.includes(s)) {
+      result.push(s);
+    }
+  })
+  return result.join(" ");
+}
+
+// Best_answer
+// new Set([iterable]); 反復可能オブジェクトが渡されたら、そのすべての要素が新しい Set オブジェクトに追加されます。
+// Set オブジェクトは値のコレクションです。挿入順に要素を反復することができます。
+// Set に重複する値は格納出来ません。Set 内の値はコレクション内で一意となります。
+const removeDuplicateWords = s => [...new Set(s.split(' '))].join(' ')
