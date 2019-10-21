@@ -233,3 +233,28 @@ function inviteMoreWomen(L) {
 // "2 1 3 a" ==>  return 1, because it contains a non numerical character
 // "1 3 2 5" ==>  return 4, because 4 is missing from the sequence
 // "1 5" ==>  return 2, because the sequence is missing 2, 3, 4 and 2
+
+// My_answer
+function findMissingNumber(sequence) {
+  if (!sequence) return 0;
+
+  let sequenceArray = sequence.split(' ').map(Number);
+  if (sequenceArray.includes(NaN)) return 1;
+
+  sequenceArray.unshift(0);
+  let max = sequenceArray.reduce((a, b) => Math.max(a, b));
+  let collects = [...Array(max).keys()];
+  let result = collects.filter(item => sequenceArray.indexOf(item) == -1)
+  return result.length ? result[0] : 0;
+}
+
+// Best_answer
+// +文字列で文字列を数値に変換できるex) +"123" => 123
+function findMissingNumber(sequence) {
+  if (!Number.isInteger(+sequence.split(' ').join(''))) return 1;
+  var arr = sequence.split(' ').map(n => +n);
+  for (i = 1; i < Math.max(...arr); i++) {
+    if (!arr.includes(i)) return i;
+  }
+  return 0;
+}
