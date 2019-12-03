@@ -17,4 +17,15 @@ function hoge(value = required()) {
   return value;
 }
 
-print(hoge())
+// 可変長引数
+function sum(...nums) {
+  let result = 0;
+  for (let num of nums) {
+    if (typeof num !== "number") {
+      throw new Error("数値ではありません");
+    }
+    result += num;
+  }
+  return result;
+}
+print(sum(1, 3, 5, 7));
