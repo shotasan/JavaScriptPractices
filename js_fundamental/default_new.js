@@ -7,3 +7,14 @@ print(getTriangle(5))
 print(getTriangle(5, null))
 // undefinedのみは引数は渡されていないと判断される
 print(getTriangle(5, undefined));
+
+// 引数を必須にする場合の処理
+function required() {
+  throw new Error('引数不足');
+}
+
+function hoge(value = required()) {
+  return value;
+}
+
+print(hoge())
