@@ -29,3 +29,9 @@ function sum(...nums) {
   return result;
 }
 print(sum(1, 3, 5, 7));
+
+// 分割代入を使用した名前付き引数
+function getTriangle({ base = 1, height = 1 }) {
+  return base * height / 2;
+}
+print(getTriangle({ base: 5, height: 4 }));
