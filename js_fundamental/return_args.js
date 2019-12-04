@@ -17,3 +17,26 @@ function factorial(n) {
 }
 
 print(factorial(5));
+
+
+// 高級関数
+function arrayWalk(data, f) {
+  for (var key in data) {
+    // コールバック関数の実行
+    f(data[key], key);
+  }
+}
+
+function showElement(value, key) {
+  print(key + ':' + value);
+}
+
+var ary = [1, 2, 4, 8, 16];
+arrayWalk(ary, showElement)
+
+var sumResult = 0;
+function sumElement(value, key) {
+  sumResult += value;
+}
+arrayWalk(ary, sumElement);
+print(sumResult);
