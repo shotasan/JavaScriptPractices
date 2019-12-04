@@ -40,3 +40,9 @@ function sumElement(value, key) {
 }
 arrayWalk(ary, sumElement);
 print(sumResult);
+
+
+// 匿名関数
+arrayWalk(ary, function (value, key) {
+  print(`${key} : ${value}`);
+})
