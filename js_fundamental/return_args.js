@@ -8,3 +8,12 @@ print(result)
 let [max, min] = getMaxMin(10, 35, -5, 78, 0);
 print(max);
 print(min);
+
+
+// 再帰関数
+function factorial(n) {
+  if (n != 0) { return n * factorial(n - 1); }
+  return 1;
+}
+
+print(factorial(5));
