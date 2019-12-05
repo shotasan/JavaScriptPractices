@@ -22,3 +22,26 @@ function e(templates, ...values) {
 let name = '<"Mario" & \'Luigi\'>';
 console.log(e`こんにちは${name}さん`);
 
+
+
+// スコープチェーン
+var y = "Global";
+
+function outerFunc() {
+  var y = "Local Outer";
+
+  function innerFunc() {
+    var z = "Local Inner";
+    // Callオブジェクト(innerFunc)を探索後、Loval Innerを返す
+    console.log(z);
+    // Callオブジェクｔ(outerFunc)を探索後、Local Outerを返す
+    console.log(y);
+    // グローバルオブジェクトを探索後、未定義のエラーを返す
+    console.log(x);
+  }
+  innerFunc();
+}
+outerFunc();
+
+
+
