@@ -45,3 +45,18 @@ outerFunc();
 
 
 
+// クロージャー
+function closure(init) {
+  var counter = init;
+
+  // 匿名関数を返す
+  return function () {
+    return ++counter;
+  }
+}
+
+// myClosureには匿名関数が保存される
+var myClosure = closure(1);
+console.log(myClosure());
+console.log(myClosure());
+console.log(myClosure());
