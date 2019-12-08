@@ -24,3 +24,19 @@ console.log(mem1.sex + mem2.sex);
 mem2.sex = "Woman";
 
 console.log(mem1.sex + mem2.sex);
+
+
+
+// オブジェクトリテラルを使用したプロトタイプオブジェクトの記述
+Member.prototype = {
+  getName: function () {
+    return this.lastName + '' + this.firstName;
+  },
+  toString: function () {
+    return this.lastName + this.firstName;
+  }
+};
+
+var mem = new Member("tanaka", "tarou");
+console.log(mem.getName());
+console.log(mem.toString());
