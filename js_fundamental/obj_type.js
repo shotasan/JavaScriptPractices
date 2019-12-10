@@ -9,3 +9,7 @@ console.log(a.constructor === Animal);
 console.log(h.constructor === Animal);
 console.log(h.constructor === Hamster);
 
+
+// instanceof演算子はオブジェクトが特定のコンストラクターによって生成されたインスタンスであるかどうかを判定する
+console.log(h instanceof Animal);
+console.log(h instanceof Hamster);
